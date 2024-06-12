@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Add Food Details Page</title>
+{% endblock %} 
+
+{% block content %} 
+    <h1 class="text-center mt-3 mb-3">Add Food</h1>
+    <div class="container">
+        <form method="post" class="jumbotron">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Add Food" class="btn btn-success">
+        </form>
+    </div>
+{% endblock %}
